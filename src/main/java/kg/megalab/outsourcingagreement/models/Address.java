@@ -11,10 +11,11 @@ import javax.persistence.*;
 @Getter
 @Setter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Table(name = "adress")
-public class Adress {
+@Table(name = "address")
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
+    @Column(name = "streetName")
     String streetName;
 }

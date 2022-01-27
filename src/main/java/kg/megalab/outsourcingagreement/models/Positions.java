@@ -1,21 +1,26 @@
 package kg.megalab.outsourcingagreement.models;
 
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Setter
 @Getter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Table(name = "positions")
 public class Positions {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
+
     @Column
+    boolean operating;
     String title;
-    boolean isActive;
+
+    public Positions() {
+    }
+
 }

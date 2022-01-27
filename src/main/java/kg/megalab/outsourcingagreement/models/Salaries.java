@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,5 +17,10 @@ public class Salaries {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
+    @Column(name = "amount")
     double amount;
+
+    @ManyToOne
+    @JoinColumn(name = "employeeId")
+    Employees employeeId;
 }
